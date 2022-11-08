@@ -5,7 +5,7 @@ import styles from "./CardsPage.module.scss";
 
 export const CardsPage = () => {
   const theme = useColorTheme();
-  console.log(theme.theme);
+  const arr = new Array(10).fill("");
   return (
     <div
       className={`${styles.container} ${
@@ -13,7 +13,11 @@ export const CardsPage = () => {
       }`}
     >
       <NavBar />
-      <Card />
+      <div className={styles.cards}>
+        {arr.map((x, i) => {
+          return <Card key={i} />;
+        })}
+      </div>
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, PropsWithChildren, useContext, useState } from "react";
 
 const ThemeContext = createContext({ theme: "dark", toggleTheme: () => {} });
 
 interface ThemeProviderProps {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
