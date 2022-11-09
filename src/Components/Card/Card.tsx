@@ -1,5 +1,4 @@
 import styles from "./Card.module.scss";
-import DriveEtaIcon from "@mui/icons-material/DriveEta";
 import { useColorTheme } from "../../Context/theme-context";
 
 export const Card = () => {
@@ -10,9 +9,7 @@ export const Card = () => {
         theme.theme === "dark" ? styles.dark : "light"
       }`}
     >
-      <div className={styles.picture}>
-        <DriveEtaIcon className={styles.icon} />
-      </div>
+      <div className={styles.picture}></div>
       <div className={styles.keyInfo}>
         <h1>BMW</h1>
         <p>16 000</p>
