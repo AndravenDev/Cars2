@@ -6,6 +6,7 @@ import { CarData } from "./mockCarData";
 
 export interface CarListing {
   title: string;
+  brand: string;
   price: number;
   make: number;
   fuel: string;

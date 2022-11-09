@@ -46,7 +46,7 @@ export const Card = ({ car }: CardProps) => {
             theme.theme === "dark" ? styles.darkPrice : "light"
           }`}
         >
-          {car.price} лв
+          {car.price.toLocaleString("en", { useGrouping: true })} лв
         </p>
       </div>
       <p className={styles.fuelYearAndMileage}>
