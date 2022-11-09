@@ -11,6 +11,7 @@ export const Card = () => {
     "https://p4.wallpaperbetter.com/wallpaper/299/78/483/mercedes-benz-amg-black-vossen-wallpaper-preview.jpg",
     "https://c4.wallpaperflare.com/wallpaper/87/707/680/mercedes-e55-amg-hd-wallpaper-preview.jpg",
     "https://c4.wallpaperflare.com/wallpaper/1020/132/850/mercedes-benz-amg-e55-hd-wallpaper-preview.jpg",
+    "https://c4.wallpaperflare.com/wallpaper/327/401/253/2003-amg-e55-mercedes-benz-wallpaper-preview.jpg",
   ];
   const theme = useColorTheme();
   const [imageIndex, setImageIndex] = useState(0);
@@ -30,9 +31,8 @@ export const Card = () => {
         theme.theme === "dark" ? styles.dark : "light"
       }`}
     >
-      {/* <div className={styles.picture}></div> */}
       <div className={styles.caurosel}>
-        <img src={images[imageIndex]} />
+        <img className={styles.picture} src={images[imageIndex]} />
         <ChevronLeftIcon
           className={styles.prev}
           onClick={() => shiftImages(-1)}
