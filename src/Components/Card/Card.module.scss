@@ -79,6 +79,7 @@
         margin-top: 20px;
         margin-bottom: 10px;
         border-bottom: 1px solid gray;
+        width: 100%;
     }
 
     .price{
@@ -114,7 +115,7 @@
         padding-left: 15px;
         padding-right: 15px;
         margin: 0;
-        height: 75px;
+        height: 110px;
         overflow-y: scroll;
     }
     .description::-webkit-scrollbar{        
@@ -130,6 +131,7 @@
 }
 
 .dark{
+    background-color: #bfbdc1;
     -webkit-box-shadow: 8px 6px 25px -7px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 8px 6px 25px -7px rgba(0, 0, 0, 0.75);
     box-shadow: 8px 6px 25px -7px rgba(0, 0, 0, 0.75);

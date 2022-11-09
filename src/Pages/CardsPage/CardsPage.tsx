@@ -2,10 +2,23 @@ import { Card } from "../../Components/Card/Card";
 import { NavBar } from "../../Components/NavBar/NavBar";
 import { useColorTheme } from "../../Context/theme-context";
 import styles from "./CardsPage.module.scss";
+import { CarData } from "./mockCarData";
+
+export interface CarListing {
+  title: string;
+  price: number;
+  make: number;
+  fuel: string;
+  mileage: number;
+  description: string;
+  sellerType: string;
+  location: string;
+  pictureUrls: string[];
+}
 
 export const CardsPage = () => {
   const theme = useColorTheme();
-  const arr = new Array(10).fill("");
+  const arr: CarListing[] = CarData;
   return (
     <div
       className={`${styles.container} ${
@@ -14,8 +27,8 @@ export const CardsPage = () => {
     >
       <NavBar />
       <div className={styles.cards}>
-        {arr.map((x, i) => {
-          return <Card key={i} />;
+        {arr.map((car, i) => {
+          return <Card key={i} car={car} />;
         })}
       </div>
     </div>
