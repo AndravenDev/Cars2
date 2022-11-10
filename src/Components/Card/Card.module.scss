@@ -31,36 +31,6 @@
             border-top-left-radius: 7px;
             border-top-right-radius: 7px;
         }
-
-        .prev, .next{
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            font-size: 40px;
-            padding: 0;
-        }
-
-        .prev:hover, .next:hover{
-            color: red;
-            transform: scale(1.5);
-            transition: 0.1s;
-            background-color: rgba(164, 171, 173, 0.5);;
-            border-radius: 50px;
-        }
-
-        .next{
-            right: 5px;
-
-        }
     }
 
     .keyInfo{
@@ -142,4 +112,34 @@
         box-shadow: 1px -1px 25px -8px rgba(170,171,119,1);
         transition: 0.01s;
     }
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    width: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    font-size: 40px;
+    padding: 0;
+    z-index: 99;
+    background-color: rgba(164, 171, 173, 0.728);
+    border-radius: 50px;
+}
+
+.prev:hover, .next:hover{
+    color: red;
+    transform: scale(1.5);
+    transition: 0.1s;
+    background-color: rgba(164, 171, 173, 0.432);
+}
+
+.next{
+    right: 5px;
+
 }

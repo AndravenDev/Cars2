@@ -23,39 +23,41 @@ export const Card = ({ car }: CardProps) => {
     setImageIndex(result);
   };
   return (
-    <div
-      className={`${styles.container} ${
-        theme.theme === "dark" ? styles.dark : "light"
-      }`}
-    >
-      <div className={styles.caurosel}>
-        <img className={styles.picture} src={car.pictureUrls[imageIndex]} />
-        <ChevronLeftIcon
-          className={styles.prev}
-          onClick={() => shiftImages(-1)}
-        ></ChevronLeftIcon>
-        <ChevronRightIcon
-          className={styles.next}
-          onClick={() => shiftImages(1)}
-        ></ChevronRightIcon>
-      </div>
-      <div className={styles.keyInfo}>
-        <p className={styles.title}>{car.title}</p>
-        <p
-          className={`${styles.price} ${
-            theme.theme === "dark" ? styles.darkPrice : "light"
-          }`}
-        >
-          {car.price.toLocaleString("en", { useGrouping: true })} лв
+    <div style={{ position: "relative" }}>
+      <ChevronLeftIcon
+        className={styles.prev}
+        onClick={() => shiftImages(-1)}
+      ></ChevronLeftIcon>
+      <ChevronRightIcon
+        className={styles.next}
+        onClick={() => shiftImages(1)}
+      ></ChevronRightIcon>
+      <div
+        className={`${styles.container} ${
+          theme.theme === "dark" ? styles.dark : "light"
+        }`}
+      >
+        <div className={styles.caurosel}>
+          <img className={styles.picture} src={car.pictureUrls[imageIndex]} />
+        </div>
+        <div className={styles.keyInfo}>
+          <p className={styles.title}>{car.title}</p>
+          <p
+            className={`${styles.price} ${
+              theme.theme === "dark" ? styles.darkPrice : "light"
+            }`}
+          >
+            {car.price.toLocaleString("en", { useGrouping: true })} лв
+          </p>
+        </div>
+        <p className={styles.fuelYearAndMileage}>
+          {car.make}, {car.fuel} {car.mileage} km
+        </p>
+        <p className={styles.description}>{car.description}</p>
+        <p className={styles.publisherInfo}>
+          {car.sellerType}, {car.location}
         </p>
       </div>
-      <p className={styles.fuelYearAndMileage}>
-        {car.make}, {car.fuel} {car.mileage} km
-      </p>
-      <p className={styles.description}>{car.description}</p>
-      <p className={styles.publisherInfo}>
-        {car.sellerType}, {car.location}
-      </p>
     </div>
   );
 };
