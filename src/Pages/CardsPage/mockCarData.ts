@@ -2,6 +2,7 @@ import { CarListing } from "./CardsPage";
 
 export const CarData: CarListing[] = [
   {
+    id: 1,
     title: "Mercedes-Benz E350 4Matic Facellift Navi",
     brand: 'Mercedes',
     price: 14000,
@@ -22,6 +23,7 @@ export const CarData: CarListing[] = [
     ],
   },
   {
+    id: 2,
     title: "BMW E60 M-pack DSG Steptronic",
     brand: "BMW",
     price: 17000,
@@ -42,6 +44,7 @@ export const CarData: CarListing[] = [
     ],
   },
   {
+    id: 3,
     title: "Volkswagen Golf 3 GT Gaz/Benzin",
     brand: "Volkswagen",
     price: 2000,
@@ -62,6 +65,7 @@ export const CarData: CarListing[] = [
     ],
   },
   {
+    id: 4,
     title: "Porche Panamera Turbo S GT3",
     brand: "Porche",
     price: 45000,
@@ -82,6 +86,7 @@ export const CarData: CarListing[] = [
     ],
   },
   {
+    id: 5,
     title: "Audi A6 Avant Sportback Quattro",
     brand: "Audi",
     price: 15000,
@@ -102,6 +107,7 @@ export const CarData: CarListing[] = [
     ],
   },
   {
+    id: 6,
     title: "Volkswagen Golf 7 GTI Facelift",
     brand: "Volkswagen",
     price: 19000,
@@ -122,6 +128,7 @@ export const CarData: CarListing[] = [
     ],
   },
   {
+    id: 7,
     title: "Volkswagen Passata na Bashtata",
     brand: "Volkswagen",
     price: 11000,
