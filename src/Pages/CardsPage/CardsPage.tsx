@@ -1,4 +1,3 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "../../Components/Card/Card";
 import { NavBar } from "../../Components/NavBar/NavBar";
 import { useColorTheme } from "../../Context/theme-context";
@@ -20,7 +19,6 @@ export interface CarListing {
 }
 
 export const CardsPage = () => {
-  const location = useNavigate();
   const theme = useColorTheme();
   const arr: CarListing[] = CarData;
   return (
@@ -29,7 +27,6 @@ export const CardsPage = () => {
         theme.theme === "dark" ? styles.dark : null
       }`}
     >
-      <NavBar />
       <div className={styles.cards}>
         {arr.map((car, i) => {
           return <Card key={i} car={car} />;

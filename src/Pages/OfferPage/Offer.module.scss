@@ -1,0 +1,34 @@
+.container{
+    height: 100vh;
+    background-color: #bfd7ff;
+    padding-left: 100px;
+    padding-right: 100px;
+    overflow-x: hidden;
+
+    p{
+        margin: 0;
+    }
+
+    .metaInfo{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .price{
+        display: flex;
+        justify-self: flex-end;
+    }
+    
+    .picture{
+        flex-shrink: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+}
+.dark {
+    background-color: #37323e;
+    color: white;
+}
