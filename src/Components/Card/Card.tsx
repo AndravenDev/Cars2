@@ -4,12 +4,14 @@ import { useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { CarListing } from "../../Pages/CardsPage/CardsPage";
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
   car: CarListing;
 }
 
 export const Card = ({ car }: CardProps) => {
+  const navigate = useNavigate();
   const theme = useColorTheme();
   const [imageIndex, setImageIndex] = useState(0);
   const shiftImages = (n: number) => {
@@ -33,6 +35,9 @@ export const Card = ({ car }: CardProps) => {
         onClick={() => shiftImages(1)}
       ></ChevronRightIcon>
       <div
+        onClick={() => {
+          navigate("./offer", { state: { id: car.id } });
+        }}
         className={`${styles.container} ${
           theme.theme === "dark" ? styles.dark : "light"
         }`}
