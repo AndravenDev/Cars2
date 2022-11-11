@@ -1,4 +1,5 @@
 import { Card } from "../../Components/Card/Card";
+import { Filters } from "../../Components/Filters/Filters";
 import { NavBar } from "../../Components/NavBar/NavBar";
 import { useColorTheme } from "../../Context/theme-context";
 import styles from "./CardsPage.module.scss";
@@ -27,6 +28,7 @@ export const CardsPage = () => {
         theme.theme === "dark" ? styles.dark : null
       }`}
     >
+      <Filters />
       <div className={styles.cards}>
         {arr.map((car, i) => {
           return <Card key={i} car={car} />;
