@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ImportExportIcon from "@mui/icons-material/ImportExport";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import HistoryIcon from "@mui/icons-material/History";
 
 export const NavBar = () => {
   const theme = useColorTheme();
@@ -18,6 +19,9 @@ export const NavBar = () => {
       }`}
     >
       <MenuIcon className={styles.hamburger} />
+      <div className={styles.previousSearches}>
+        <HistoryIcon /> <p>Previous Searches</p>
+      </div>
       <p className={styles.logo}>cars2.bg</p>
       <Switch
         color={theme.theme === "dark" ? "primary" : "danger"}
