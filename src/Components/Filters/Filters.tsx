@@ -27,30 +27,39 @@ export const Filters = () => {
   const [currentFilter, setCurrentFilter] = useState<any>();
 
   const getCurrentFilterUI = (key: string) => {
+    const coupeTypes = ["Wagon", "Sendan", "Hatchback"];
+    const brands = ["Audi", "BMW", "Mercedes"];
+    const vehicleTypes = ["Cars", "Trucks", "Semis", "Bikes", "Buses"];
+    const fuelTypes = ["Diesel", "Petrol/Gaz", "Petrol"];
+    const gearboxTypes = ["Automatic", "Manual"];
+
+    const chips = (values: string[]) => {
+      return (
+        <div>
+          {values.map((x, i) => (
+            <Chip
+              key={i}
+              className={`${styles.chip} ${styles.openFilterChip}`}
+              label={x}
+              variant="outlined"
+              color="primary"
+            />
+          ))}
+        </div>
+      );
+    };
     const filterUIs = {
-      coupe: () => {
-        const coupeTypes = ["Wagon", "Sendan", "Hatchback"];
-        return (
-          <div>
-            {coupeTypes.map((x, i) => (
-              <Chip
-                key={i}
-                className={`${styles.chip} ${styles.openFilterChip}`}
-                label={x}
-                variant="outlined"
-                color="primary"
-              />
-            ))}
-          </div>
-        );
-      },
+      coupe: () => chips(coupeTypes),
+      brand: () => chips(brands),
+      type: () => chips(vehicleTypes),
+      fuel: () => chips(fuelTypes),
+      gearbox: () => chips(gearboxTypes),
     };
     if (key && Object.keys(filterUIs).includes(key)) {
       return filterUIs[key as keyof typeof filterUIs];
     }
     return () => <div></div>;
   };
-  console.log(getCurrentFilterUI("coupe"));
   return (
     <div
       className={`${styles.container} ${
