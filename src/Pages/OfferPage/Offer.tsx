@@ -5,11 +5,19 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import styles from "./Offer.module.scss";
 import { useState } from "react";
+import { comparePricesByBrand } from "../../Utility/comparePrices";
 
 export const Offer = () => {
   const { state } = useLocation();
   const theme = useColorTheme();
   const currentCar = CarData.find((x) => x.id === state.id);
+
+  if (!currentCar) return;
+
+  const priceAnalysis = comparePricesByBrand(
+    currentCar?.brand,
+    currentCar.price
+  );
 
   const [imageIndex, setImageIndex] = useState(0);
 
@@ -32,7 +40,7 @@ export const Offer = () => {
       {currentCar ? (
         <div>
           <div className={styles.metaInfo}>
-            <p>today, 12:58</p>
+            <p>Today, 12:58</p>
             <div>
               <span>
                 views: <span>12085</span>
@@ -41,13 +49,48 @@ export const Offer = () => {
             </div>
           </div>
 
+          <p className={styles.title}>{currentCar.title}</p>
+
+          <div className={styles.priceAnalysisContainer}>
+            {priceAnalysis.offsetFromAverage === 0 ? (
+              <p>This {currentCar.brand} matches the average price</p>
+            ) : (
+              <div>
+                This {currentCar.brand} is{" "}
+                <span
+                  className={
+                    priceAnalysis.isCheaperThanAverage
+                      ? styles.cheap
+                      : styles.expensive
+                  }
+                >
+                  {priceAnalysis.offsetFromAverage.toFixed(2)}%
+                </span>{" "}
+                {priceAnalysis.isCheaperThanAverage ? (
+                  <span>cheaper </span>
+                ) : (
+                  <span>more expensve </span>
+                )}
+                than the average price for a {currentCar.brand} which is{" "}
+                <span className={styles.averagePrice}>
+                  {
+                    priceAnalysis.averagePrice
+                      .toLocaleString("eu")
+                      .split(".")[0]
+                  }{" "}
+                  lv
+                </span>
+              </div>
+            )}
+          </div>
+
           <div>
-            <p className={styles.title}>{currentCar.title}</p>
+            {/* <p className={styles.title}>{currentCar.title}</p> */}
             <p className={styles.keyData}>
               {currentCar.make}, {currentCar.fuel}, {currentCar.mileage}
             </p>
           </div>
-          <div style={{ maxHeight: "500px", overflow: "hidden" }}>
+          <div style={{ maxHeight: "800px", overflow: "hidden" }}>
             <img
               className={styles.picture}
               src={currentCar.pictureUrls[imageIndex]}
