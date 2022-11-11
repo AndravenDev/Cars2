@@ -27,13 +27,13 @@ export const Filters = () => {
   const [currentFilter, setCurrentFilter] = useState<any>();
 
   const getCurrentFilterUI = (key: string) => {
-    const coupeTypes = ["Wagon", "Sendan", "Hatchback"];
+    const coupeTypes = ["Wagon", "Sedan", "Hatchback"];
     const brands = ["Audi", "BMW", "Mercedes"];
     const vehicleTypes = ["Cars", "Trucks", "Semis", "Bikes", "Buses"];
     const fuelTypes = ["Diesel", "Petrol/Gaz", "Petrol"];
     const gearboxTypes = ["Automatic", "Manual"];
 
-    const chips = (values: string[]) => {
+    const chips = (values: string[], criteria: string) => {
       return (
         <div>
           {values.map((x, i) => (
@@ -49,11 +49,11 @@ export const Filters = () => {
       );
     };
     const filterUIs = {
-      coupe: () => chips(coupeTypes),
-      brand: () => chips(brands),
-      type: () => chips(vehicleTypes),
-      fuel: () => chips(fuelTypes),
-      gearbox: () => chips(gearboxTypes),
+      coupe: () => chips(coupeTypes, "coupe"),
+      brand: () => chips(brands, "brand"),
+      type: () => chips(vehicleTypes, "type"),
+      fuel: () => chips(fuelTypes, "fuel"),
+      gearbox: () => chips(gearboxTypes, "gearbox"),
     };
     if (key && Object.keys(filterUIs).includes(key)) {
       return filterUIs[key as keyof typeof filterUIs];
