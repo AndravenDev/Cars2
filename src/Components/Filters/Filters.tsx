@@ -3,6 +3,8 @@ import styles from "./Filters.module.scss";
 import { useColorTheme } from "../../Context/theme-context";
 import { Button } from "@mui/material";
 import { useState } from "react";
+import { CarData } from "../../Pages/CardsPage/mockCarData";
+import { useCarFilters } from "../../Context/filter-context";
 
 export const Filters = () => {
   const theme = useColorTheme();
@@ -25,6 +27,7 @@ export const Filters = () => {
     "Condition",
   ];
   const [currentFilter, setCurrentFilter] = useState<any>();
+  const filterContext = useCarFilters();
 
   const getCurrentFilterUI = (key: string) => {
     const coupeTypes = ["Wagon", "Sedan", "Hatchback"];
@@ -36,11 +39,14 @@ export const Filters = () => {
     const chips = (values: string[], criteria: string) => {
       return (
         <div>
-          {values.map((x, i) => (
+          {values.map((value, i) => (
             <Chip
+              onClick={() => {
+                filterContext.applyFilters(criteria, value);
+              }}
               key={i}
               className={`${styles.chip} ${styles.openFilterChip}`}
-              label={x}
+              label={value}
               variant="outlined"
               color="primary"
             />
@@ -60,6 +66,7 @@ export const Filters = () => {
     }
     return () => <div></div>;
   };
+
   return (
     <div
       className={`${styles.container} ${

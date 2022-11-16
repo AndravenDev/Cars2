@@ -4,6 +4,7 @@ export const CarData: CarListing[] = [
   {
     id: 1,
     title: "Mercedes-Benz E350 4Matic Facellift Navi",
+    coupe: 'Sedan',
     brand: 'Mercedes',
     price: 14000,
     make: 2009,
@@ -25,6 +26,7 @@ export const CarData: CarListing[] = [
   {
     id: 2,
     title: "BMW E60 M-pack DSG Steptronic",
+    coupe: 'Sedan',
     brand: "BMW",
     price: 17000,
     make: 2009,
@@ -46,6 +48,7 @@ export const CarData: CarListing[] = [
   {
     id: 3,
     title: "Volkswagen Golf 3 GT Gaz/Benzin",
+    coupe: 'Hatchback',
     brand: "Volkswagen",
     price: 2000,
     make: 1998,
@@ -67,6 +70,7 @@ export const CarData: CarListing[] = [
   {
     id: 4,
     title: "Porche Panamera Turbo S GT3",
+    coupe: 'Wagon',
     brand: "Porche",
     price: 45000,
     make: 2013,
@@ -88,6 +92,7 @@ export const CarData: CarListing[] = [
   {
     id: 5,
     title: "Audi A6 Avant Sportback Quattro",
+    coupe: 'Wagon',
     brand: "Audi",
     price: 15000,
     make: 2010,
@@ -109,6 +114,7 @@ export const CarData: CarListing[] = [
   {
     id: 6,
     title: "Volkswagen Golf 7 GTI Facelift",
+    coupe: 'Hatchback',
     brand: "Volkswagen",
     price: 19000,
     make: 2018,
@@ -130,6 +136,7 @@ export const CarData: CarListing[] = [
   {
     id: 7,
     title: "Volkswagen Passata na Bashtata",
+    coupe: 'Sedan',
     brand: "Volkswagen",
     price: 11000,
     make: 2009,
@@ -151,6 +158,7 @@ export const CarData: CarListing[] = [
   {
     id: 8,
     title: "Mercedes-Benz S550 W221 Long",
+    coupe: 'Sedan',
     brand: 'Mercedes',
     price: 24000,
     make: 2009,
@@ -170,6 +178,7 @@ export const CarData: CarListing[] = [
   {
     id: 9,
     title: "Mercedes-Benz C320 W203 FACELIFT",
+    coupe: 'Sedan',
     brand: 'Mercedes',
     price: 18000,
     make: 2012,
@@ -189,6 +198,7 @@ export const CarData: CarListing[] = [
   {
     id: 10,
     title: "Mercedes-Benz E500 W212 FACELIFT",
+    coupe: 'Sedan',
     brand: 'Mercedes',
     price: 22000,
     make: 2012,
@@ -208,6 +218,7 @@ export const CarData: CarListing[] = [
   {
     id: 11,
     title: "Mercedes-Benz E300 W213 COUPE",
+    coupe: 'Sedan',
     brand: 'Mercedes',
     price: 32000,
     make: 2012,
@@ -227,6 +238,7 @@ export const CarData: CarListing[] = [
   {
     id: 12,
     title: "Mercedes-Benz C220 W202 Kombi",
+    coupe: 'Wagon',
     brand: 'Mercedes',
     price: 5559,
     make: 1999,
